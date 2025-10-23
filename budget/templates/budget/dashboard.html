@@ -1,0 +1,30 @@
+{% extends "budget/base.html" %}
+{% block content %}
+<h2>Budget Overview</h2>
+<div class="cards">
+  <div class="card"><h3>Income</h3><p>${{ income }}</p></div>
+  <div class="card"><h3>Expenses</h3><p>${{ expense }}</p></div>
+  <div class="card"><h3>Balance</h3><p>${{ balance }}</p></div>
+</div>
+
+<h3>Recent Entries</h3>
+<table>
+  <tr><th>Date</th><th>Type</th><th>Amount</th><th>Item</th><th></th></tr>
+  {% for e in entries %}
+  <tr>
+    <td>{{ e.date }}</td>
+    <td>{{ e.get_ttype_display }}</td>
+    <td>${{ e.amount }}</td>
+    <td>{{ e.item }}</td>
+    <td>
+      <form method="post" action="{% url 'entry_delete' e.pk %}" style="display:inline">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="5">Nothing yet—add your first entry!</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +206,78 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+=======
+# =======================================
+# PYTHON / DJANGO PROJECT .gitignore
+# =======================================
+
+# --- Python cache & compiled files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.py.class
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+*.env
+*.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Django specific ---
+db.sqlite3
+/media/
+staticfiles/
+*.log
+
+# --- Environment variables / secrets ---
+.env
+.env.*
+.envrc
+secrets.json
+*.pem
+*.key
+*.crt
+*.csr
+
+# --- IDE/editor settings ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- macOS / Linux / Windows ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+*~
+
+# --- Node (if you add React or JS tools) ---
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# --- Coverage / testing ---
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+nosetests.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# --- Build / dist ---
+build/
+dist/
+.eggs/
+*.egg-info/
+MANIFEST
+>>>>>>> aa683e1 (Initial commit for budget tracker)
